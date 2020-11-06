@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
 import { Component, Vue } from 'vue-property-decorator';
 import HomeFrame from '@/components/HomeFrame.vue';
 import Nawabari from '@/components/Nawabari.vue'; // @ is an alias to /src
@@ -16,7 +16,8 @@ import Nawabari from '@/components/Nawabari.vue'; // @ is an alias to /src
     HomeFrame,
   },
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+}
 </script>
 
 <style lang="scss">

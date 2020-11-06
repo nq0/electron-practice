@@ -1,7 +1,27 @@
 <template>
 <div class="frame">
   <div class="top">
-
+    <ul>
+      <li>
+        下僕レベル 100Lv
+      </li>
+      <li>
+        かりかり
+        <img src="../assets/pet_food_cat.png">
+      </li>
+      <li>
+        ちゅ〜る
+        <img src="../assets/thuru.png">
+      </li>
+      <li>
+        かんづめ
+        <img src="../assets/pet_food_cat_can.png">
+      </li>
+      <li>
+        にぼし
+        <img src="../assets/food_niboshi.png">
+      </li>
+    </ul>
   </div>
   <div class="left">
     <p>ねこ</p>
@@ -21,7 +41,7 @@
 
 <script lang="ts">
 export default {
-name: "HomeFrame",
+name: 'HomeFrame',
   data() {
     return {
       items: [
@@ -32,15 +52,18 @@ name: "HomeFrame",
         'ごー',
         'ろく',
         'なな',
-      ]
-    }
+      ],
+    };
   },
   methods: {
-    clickButton(item: number) {
-      console.log(item)
-    }
-  }
-}
+    clickButton(i: number) {
+      switch (i) {
+        case 0: this.$router.push('/zoshoku');
+        default: console.log(i);
+      }
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -54,6 +77,23 @@ name: "HomeFrame",
   width: 100%;
   height: 6%;
   background: darkseagreen;
+  box-shadow: 0 6px 3px -3px #0000002e;
+ul {
+    height: 32px;
+    align-items: center;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 14% 0 10%;
+    list-style-type: none;
+    li {
+      display: flex;
+      align-items: center;
+      img {
+        height: 32px;
+      }
+    }
+  }
 }
 .left {
   width: 10%;
@@ -73,19 +113,17 @@ name: "HomeFrame",
   width: 14%;
   height: 100%;
   background: cadetblue;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 94%;
-}
-
-button {
-  width: 100%;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 94%;
+  }
+  button {
+    width: 100%;
+  }
 }
 </style>
